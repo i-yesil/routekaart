@@ -16,21 +16,15 @@ export const KeyPrinciples: React.FC<KeyPrinciplesProps> = ({ blokken }) => {
               key={idx}
               className={`rounded-xl p-3.5 sm:p-4 border-2 transition-colors ${
                 isBlauw
-                  ? 'bg-[#EDF4F6] border-[#00587A]/30'
-                  : 'bg-[#FAF7F2] border-[#D1C7BA]'
+                  ? 'bg-[#FFF7ED] border-[#EA580C]/35'
+                  : 'bg-[#FFFDF9] border-[#FDBA74]/50'
               }`}
             >
-              <h4 className="text-[13.5px] font-bold text-[#003340] mb-1.5 flex items-center gap-2">
-                <span
-                  className={`w-2.5 h-2.5 rounded-full shrink-0 ${
-                    isBlauw ? 'bg-[#00587A]' : 'bg-[#BA093F]'
-                  }`}
-                  aria-hidden="true"
-                />
+              <h4 className="text-[13.5px] font-bold text-[#7C2D12] mb-1.5">
                 {blok.t}
               </h4>
               <div
-                className="text-[12.5px] text-[#1F2937] leading-relaxed [&_a]:text-[#00587A] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#003340]"
+                className="text-[12.5px] text-[#431407] leading-relaxed [&_a]:text-[#C2410C] [&_a]:underline [&_a]:font-bold hover:[&_a]:text-[#7C2D12]"
                 dangerouslySetInnerHTML={{ __html: blok.i }}
               />
             </article>

@@ -122,7 +122,7 @@ export const ACTOREN: Actor[] = [
       },
       {
         t: 'Vertrouwenspersoon',
-        i: 'Onafhankelijk en vertrouwelijk. Ook buiten de opleiding om. Kies zelf een vertrouwenspersoon via de <a href="https://www.hogeschoolrotterdam.nl/voorlichting/begeleiding-en-voorzieningen/vertrouwenspersonen/" target="_blank" rel="noopener noreferrer" class="font-bold text-[#00587A] underline hover:text-[#003340]">website van Hogeschool Rotterdam</a>.'
+        i: 'Onafhankelijk en vertrouwelijk. Ook buiten de opleiding om. Kies zelf een <a href="https://hint.hr.nl/nl/HR/Over-de-HR/De-Organisatie/Contactpersonen/vertrouwenspersonen/" target="_blank" rel="noopener noreferrer" class="font-bold underline">vertrouwenspersoon</a>.'
       },
       {
         t: 'Centraal meldpunt',
@@ -166,7 +166,7 @@ export const ACTOREN: Actor[] = [
         id: 'begeleider-4',
         titel: 'Begeleiding',
         kern: 'Wat wil de student?',
-        detail: '<p><b>Wat wil de student?</b></p><ul class="space-y-1 mt-1 text-[12px]"><li><b>A.</b> (Nog) niets doen</li><li><b>B.</b> Zelf het gesprek voeren</li><li><b>C.</b> Driehoeksgesprek met stagebedrijf</li><li><b>D.</b> Officiële melding doen</li></ul>'
+        detail: '<ul class="space-y-1 text-[12px]"><li><b>A.</b> (Nog) niets doen</li><li><b>B.</b> Zelf het gesprek voeren</li><li><b>C.</b> Driehoeksgesprek met stagebedrijf</li><li><b>D.</b> Officiële melding doen</li></ul>'
       },
       {
         id: 'begeleider-5',
@@ -490,9 +490,9 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
       ],
       contactInfo: {
         naam: 'Vertrouwenspersonen Hogeschool Rotterdam',
-        contact: 'https://www.hogeschoolrotterdam.nl/voorlichting/begeleiding-en-voorzieningen/vertrouwenspersonen/',
+        contact: 'https://hint.hr.nl/nl/HR/Over-de-HR/De-Organisatie/Contactpersonen/vertrouwenspersonen/',
         toelichting: 'Onafhankelijk en vertrouwelijk. Bekijk het overzicht en kies zelf met wie je contact opneemt.',
-        linkUrl: 'https://www.hogeschoolrotterdam.nl/voorlichting/begeleiding-en-voorzieningen/vertrouwenspersonen/',
+        linkUrl: 'https://hint.hr.nl/nl/HR/Over-de-HR/De-Organisatie/Contactpersonen/vertrouwenspersonen/',
         linkLabel: 'Kies een vertrouwenspersoon'
       }
     }

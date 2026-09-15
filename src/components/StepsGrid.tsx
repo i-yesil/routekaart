@@ -71,41 +71,39 @@ export const StepsGrid: React.FC<StepsGridProps> = ({ stappen, onOpenAction }) =
 
                 {/* Action Button */}
                 {stap.actie && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (stap.actieType === 'mail') {
-                        const subject = encodeURIComponent('Zorgen over mijn (zoektocht naar een) stage');
-                        const body = encodeURIComponent(
-                          `Beste [Naam Studentcoach/vertrouwenspersoon],\n\n` +
-                          `Ik neem contact met je op omdat ik het gevoel heb dat ik te maken heb (gehad) met stagediscriminatie/ ongelijk behandeld wordt op mijn stageplek. Ik vind het lastig om hierover te praten en ik maak me zorgen over de impact op mijn studie/beoordeling. Zouden we hier op korte termijn (vertrouwelijk) over in gesprek kunnen gaan, zodat ik kan ontdekken wat mijn opties zijn?\n\n` +
-                          `Met vriendelijke groet,\n\n` +
-                          `[Jouw naam]\n` +
-                          `[Je opleiding/studentnummer]`
-                        );
-                        try {
-                          window.location.href = `mailto:?subject=${subject}&body=${body}`;
-                        } catch {
-                          // Fallback to modal dialog
-                        }
-                      }
-                      onOpenAction(stap.actieType || 'aanpak', stap.titel);
-                    }}
-                    className={`inline-flex items-center justify-between w-full mt-3 pt-2.5 border-t border-[#E4DDD2] text-[12.5px] font-bold transition-colors cursor-pointer group text-left focus-visible:outline-2 focus-visible:outline-[#003340] focus-visible:outline-offset-2 min-h-[38px] ${
-                      stap.actieType === 'mail'
-                        ? 'text-[#0078D4] hover:text-[#106EBE]'
-                        : 'text-[#00587A] hover:text-[#003950]'
-                    }`}
-                    aria-label={`Lees meer over ${stap.actie} voor stap ${index + 1}: ${stap.titel}`}
-                  >
-                    <span className="inline-flex items-center gap-1.5 truncate pr-1 group-hover:underline underline-offset-2">
-                      {stap.actieType === 'mail' && (
+                  stap.actieType === 'mail' ? (
+                    <a
+                      href={`mailto:?subject=${encodeURIComponent('Zorgen over mijn (zoektocht naar een) stage')}&body=${encodeURIComponent(
+                        `Beste [Naam Studentcoach/stagebegeleider],\n\n` +
+                        `Ik neem contact met je op omdat ik het gevoel heb dat ik te maken heb (gehad) met stagediscriminatie/ongelijk behandeld word op mijn stageplek. Ik vind het lastig om hierover te praten en ik maak me zorgen over de impact op mijn studie/beoordeling. Zouden we hier op korte termijn (vertrouwelijk) over in gesprek kunnen gaan, zodat ik kan ontdekken wat mijn opties zijn?\n\n` +
+                        `Met vriendelijke groet,\n\n` +
+                        `[Jouw naam]\n` +
+                        `[Je opleiding/studentnummer]`
+                      )}`}
+                      className="inline-flex items-center justify-between w-full mt-3 pt-2.5 border-t border-[#E4DDD2] text-[12.5px] font-bold transition-colors cursor-pointer group text-left focus-visible:outline-2 focus-visible:outline-[#003340] focus-visible:outline-offset-2 min-h-[38px] text-[#0078D4] hover:text-[#106EBE]"
+                      aria-label={`Stuur direct een e-mail naar je begeleider voor stap ${index + 1}: ${stap.titel}`}
+                    >
+                      <span className="inline-flex items-center gap-1.5 truncate pr-1 group-hover:underline underline-offset-2">
                         <Mail className="w-3.5 h-3.5 text-[#0078D4] shrink-0" aria-hidden="true" />
-                      )}
-                      <span>{stap.actie}</span>
-                    </span>
-                    <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </button>
+                        <span>{stap.actie}</span>
+                      </span>
+                      <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onOpenAction(stap.actieType || 'aanpak', stap.titel);
+                      }}
+                      className="inline-flex items-center justify-between w-full mt-3 pt-2.5 border-t border-[#E4DDD2] text-[12.5px] font-bold transition-colors cursor-pointer group text-left focus-visible:outline-2 focus-visible:outline-[#003340] focus-visible:outline-offset-2 min-h-[38px] text-[#00587A] hover:text-[#003950]"
+                      aria-label={`Lees meer over ${stap.actie} voor stap ${index + 1}: ${stap.titel}`}
+                    >
+                      <span className="inline-flex items-center gap-1.5 truncate pr-1 group-hover:underline underline-offset-2">
+                        <span>{stap.actie}</span>
+                      </span>
+                      <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    </button>
+                  )
                 )}
               </div>
             </article>

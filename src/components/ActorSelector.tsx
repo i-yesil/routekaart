@@ -55,8 +55,7 @@ export const ActorSelector: React.FC<ActorSelectorProps> = ({
 
   return (
     <nav className="mb-6" aria-label="Rolselectie en navigatie">
-      <p id="actor-select-label" className="text-[13px] font-extrabold uppercase tracking-[0.9px] text-[#003340] mb-2.5 flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-[#00587A]" aria-hidden="true" />
+      <p id="actor-select-label" className="text-[13px] font-extrabold uppercase tracking-[0.9px] text-[#003340] mb-2.5">
         Kies je rol om de handelingsroute te bekijken:
       </p>
 

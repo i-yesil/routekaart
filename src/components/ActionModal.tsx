@@ -71,7 +71,7 @@ export const ActionModal: React.FC<ActionModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="bg-[#FAF7F2] border-2 border-[#003340] rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col text-[#003340]"
+        className="bg-[#FAF7F2] border-2 border-[#003340] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col text-[#003340]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

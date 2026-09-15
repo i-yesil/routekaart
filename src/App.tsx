@@ -51,7 +51,7 @@ export default function App() {
         {liveMessage}
       </div>
 
-      <div className="max-w-[1440px] w-full mx-auto wrap-container">
+      <div className="max-w-[1240px] mx-auto wrap-container">
         {/* Semantic Header */}
         <Header
           onOpenMeldpunt={() => {
@@ -165,9 +165,8 @@ export default function App() {
               <section aria-labelledby="principles-heading" className="mt-2 mb-6">
                 <h3
                   id="principles-heading"
-                  className="text-[13px] font-extrabold uppercase tracking-[0.9px] text-[#003340] mb-2.5 flex items-center gap-2"
+                  className="text-[13px] font-extrabold uppercase tracking-[0.9px] text-[#7C2D12] mb-2.5"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#00587A]" aria-hidden="true" />
                   {currentActor.id === 'student' ? 'BIJ WIE KUN JE TERECHT?' : `BIJ WIE KUN JE TERECHT? · ${currentActor.naam}`}
                 </h3>
                 <KeyPrinciples blokken={currentActor.blokken} />
