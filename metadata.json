@@ -1,0 +1,7 @@
+{
+  "name": "Routekaart Gelijke Stagekansen",
+  "description": "Interactieve routekaart en handelingskader voor gelijke stagekansen en de aanpak van stagediscriminatie binnen Hogeschool Rotterdam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
