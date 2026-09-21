@@ -98,13 +98,7 @@ export default function App() {
               <WarningCallout letOpHtml={currentActor.letOp} />
 
               {/* Key Principles & Contact Points */}
-              <section aria-labelledby="principles-heading" className="mt-2 mb-6">
-                <h3
-                  id="principles-heading"
-                  className="text-[13px] font-extrabold uppercase tracking-[0.9px] text-[#7C2D12] mb-2.5"
-                >
-                  {currentActor.id === 'student' ? 'BIJ WIE KUN JE TERECHT?' : `BIJ WIE KUN JE TERECHT? · ${currentActor.naam}`}
-                </h3>
+              <section aria-label="Bij wie kun je terecht?" className="mt-2 mb-6">
                 <KeyPrinciples blokken={currentActor.blokken} />
               </section>
             </motion.div>

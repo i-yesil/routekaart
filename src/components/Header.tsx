@@ -163,11 +163,11 @@ export const Header: React.FC<HeaderProps> = () => {
                   <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
                 <a
-                  href="https://www.rijksoverheid.nl/documenten/publicaties/2024/03/22/manifest-tegen-stagediscriminatie-hoger-onderwijs"
+                  href="https://open.overheid.nl/documenten/74c0269a-d08e-4779-b707-4d71dd8820ea/file"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#D1C7BA] bg-[#FAF7F2] hover:bg-white text-[#003340] text-[12px] font-bold transition-colors"
-                  title="Bekijk het landelijk Manifest tegen stagediscriminatie hoger onderwijs"
+                  title="Bekijk het landelijk Manifest tegen stagediscriminatie hoger onderwijs (PDF)"
                 >
                   <span>Manifest (pdf)</span>
                   <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />

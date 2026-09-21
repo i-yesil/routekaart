@@ -126,7 +126,7 @@ export const ACTOREN: Actor[] = [
       },
       {
         t: 'Centraal meldpunt',
-        i: 'Anoniem of op naam. Meld direct via het <a href="https://forms.cloud.microsoft/e/fD8hpCT6WL" target="_blank" rel="noopener noreferrer" class="font-bold underline">meldingsformulier</a>.'
+        i: 'Anoniem of op naam. Meld direct via het <a href="https://forms.cloud.microsoft/e/fD8hpCT6WL" target="_blank" rel="noopener noreferrer" class="font-bold underline">meldpunt</a>.'
       }
     ]
   },
