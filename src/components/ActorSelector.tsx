@@ -73,7 +73,7 @@ export const ActorSelector: React.FC<ActorSelectorProps> = ({
               tabIndex={isActief ? 0 : -1}
               onClick={() => onSelect(idx)}
               onKeyDown={(e) => handleKeyDown(e, idx)}
-              className={`flex items-center gap-3 p-3.5 rounded-xl bg-white border-2 text-left cursor-pointer transition-all duration-150 min-h-[58px] w-full sm:w-[280px] focus-visible:outline-2 focus-visible:outline-[#003340] focus-visible:outline-offset-2 ${
+              className={`flex items-center gap-3 p-3.5 rounded-xl bg-white border-2 text-left cursor-pointer transition-all duration-150 min-h-[66px] w-full sm:w-[310px] focus-visible:outline-2 focus-visible:outline-[#003340] focus-visible:outline-offset-2 ${
                 isActief
                   ? 'border-[#BA093F] shadow-[0_4px_14px_rgba(186,9,63,0.16)] -translate-y-0.5'
                   : 'border-[#D1C7BA] hover:border-[#003340] hover:-translate-y-0.5'
@@ -94,7 +94,7 @@ export const ActorSelector: React.FC<ActorSelectorProps> = ({
                 </span>
                 <span
                   title={actor.rol}
-                  className="text-[11.5px] text-[#3D3833] line-clamp-1 leading-snug block mt-0.5"
+                  className="text-[11.5px] text-[#3D3833] line-clamp-2 leading-snug block mt-0.5"
                 >
                   {actor.rol}
                 </span>

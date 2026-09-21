@@ -66,7 +66,7 @@ export const ACTOREN: Actor[] = [
   {
     id: 'student',
     naam: 'Student',
-    rol: 'Ik ervaar of vermoed het',
+    rol: 'Stagiair of zoekende',
     icoon: 'GraduationCap',
     vraag: 'Wat doe ik als ik stagediscriminatie ervaar of vermoed?',
     letOp: 'Niet jouw schuld. Erkenning gaat altijd vóór bewijs. Je hoeft het niet alleen op te lossen.',
@@ -133,10 +133,10 @@ export const ACTOREN: Actor[] = [
   {
     id: 'begeleider',
     naam: 'Begeleider',
-    rol: 'Studentcoach, stagebegeleider, docent',
+    rol: 'Studentcoach, stagebegeleider, stagecoördinator, docent',
     icoon: 'UserCheck',
     vraag: 'Wat doe ik als een student stagediscriminatie ervaart of vermoedt?',
-    letOp: 'Acuut onveilig? Schakel direct op naar de opleidingsmanager. · Twijfel is genoeg: een vermoeden rechtvaardigt al een gesprek.',
+    letOp: 'Acuut onveilig? Schakel direct op naar de opleidingsmanager.',
     stappen: [
       {
         id: 'begeleider-1',
@@ -150,7 +150,7 @@ export const ACTOREN: Actor[] = [
         id: 'begeleider-2',
         titel: 'Signaleren',
         kern: 'Vraag actief door tijdens gesprekken en terugkomdagen.',
-        detail: '<p>Vraag actief door tijdens gesprekken en terugkomdagen en let op signalen in de sollicitatiefase én tijdens de stage. Bij een signaal: plan binnen 5 werkdagen een gesprek. Bevestig dat je het serieus neemt.</p>',
+        detail: '<p>Let op signalen in de sollicitatiefase én tijdens de stage. Bij een signaal: plan binnen 5 werkdagen een gesprek. Bevestig dat je het serieus neemt.</p>',
         actie: 'Naar de aanpak',
         actieType: 'aanpak'
       },
@@ -177,7 +177,7 @@ export const ACTOREN: Actor[] = [
     ],
     blokken: [
       { t: 'Regie bij de student', i: 'De student bepaalt de vervolgstappen, behalve bij acute onveiligheid.' },
-      { t: 'Empathie vóór bewijs', i: 'Erkenning en luisteren gaan altijd vóór waarheidsvinding of bewijslast.' },
+      { t: 'Empathie vóór bewijs', i: 'Erkenning en luisteren gaan altijd vóór waarheidsvinding of bewijslast. Een vermoeden rechtvaardigt al een gesprek.' },
       { t: 'Onafhankelijkheid', i: 'Het belang en welzijn van de student gaat vóór de relatie met het stagebedrijf. Altijd.' },
       { t: 'Documenteer met toestemming', i: 'Leg feiten en afspraken vast, alleen met instemming van de student.', b: true }
     ]
@@ -192,14 +192,14 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
     badge: 'Standaardmail Outlook',
     emailTemplate: {
       subject: 'Zorgen over mijn (zoektocht naar een) stage',
-      body: `Beste [Naam Studentcoach/vertrouwenspersoon],\n\n` +
-        `Ik neem contact met je op omdat ik het gevoel heb dat ik te maken heb (gehad) met stagediscriminatie/ ongelijk behandeld wordt op mijn stageplek. Ik vind het lastig om hierover te praten en ik maak me zorgen over de impact op mijn studie/beoordeling. Zouden we hier op korte termijn (vertrouwelijk) over in gesprek kunnen gaan, zodat ik kan ontdekken wat mijn opties zijn?\n\n` +
+      body: `Beste [Naam],\n\n` +
+        `Ik neem contact met je op omdat ik het gevoel heb dat ik te maken heb (gehad) met stagediscriminatie/ongelijk behandeld word op mijn stageplek. Ik vind het lastig om hierover te praten en ik maak me zorgen over de impact op mijn studie/beoordeling. Zouden we hier op korte termijn (vertrouwelijk) over in gesprek kunnen gaan, zodat ik kan ontdekken wat mijn opties zijn?\n\n` +
         `Met vriendelijke groet,\n\n` +
         `[Jouw naam]\n` +
         `[Je opleiding/studentnummer]`,
       mailtoUrl: `mailto:?subject=${encodeURIComponent('Zorgen over mijn (zoektocht naar een) stage')}&body=${encodeURIComponent(
-        `Beste [Naam Studentcoach/vertrouwenspersoon],\n\n` +
-        `Ik neem contact met je op omdat ik het gevoel heb dat ik te maken heb (gehad) met stagediscriminatie/ ongelijk behandeld wordt op mijn stageplek. Ik vind het lastig om hierover te praten en ik maak me zorgen over de impact op mijn studie/beoordeling. Zouden we hier op korte termijn (vertrouwelijk) over in gesprek kunnen gaan, zodat ik kan ontdekken wat mijn opties zijn?\n\n` +
+        `Beste [Naam],\n\n` +
+        `Ik neem contact met je op omdat ik het gevoel heb dat ik te maken heb (gehad) met stagediscriminatie/ongelijk behandeld word op mijn stageplek. Ik vind het lastig om hierover te praten en ik maak me zorgen over de impact op mijn studie/beoordeling. Zouden we hier op korte termijn (vertrouwelijk) over in gesprek kunnen gaan, zodat ik kan ontdekken wat mijn opties zijn?\n\n` +
         `Met vriendelijke groet,\n\n` +
         `[Jouw naam]\n` +
         `[Je opleiding/studentnummer]`
