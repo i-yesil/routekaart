@@ -126,7 +126,7 @@ export const ACTOREN: Actor[] = [
       },
       {
         t: 'Centraal meldpunt',
-        i: 'Anoniem of op naam. Helpt patronen zichtbaar maken en aanpakken.'
+        i: 'Anoniem of op naam. Meld direct via het <a href="https://forms.cloud.microsoft/e/fD8hpCT6WL" target="_blank" rel="noopener noreferrer" class="font-bold underline">meldingsformulier</a>.'
       }
     ]
   },
@@ -180,171 +180,6 @@ export const ACTOREN: Actor[] = [
       { t: 'Empathie vóór bewijs', i: 'Erkenning en luisteren gaan altijd vóór waarheidsvinding of bewijslast.' },
       { t: 'Onafhankelijkheid', i: 'Het belang en welzijn van de student gaat vóór de relatie met het stagebedrijf. Altijd.' },
       { t: 'Documenteer met toestemming', i: 'Leg feiten en afspraken vast, alleen met instemming van de student.', b: true }
-    ]
-  },
-  {
-    id: 'coordinator',
-    naam: 'Stagecoördinator',
-    rol: 'Stagebureau / Praktijkbureau',
-    icoon: 'Network',
-    vraag: 'Wat doe ik als er een signaal over stagediscriminatie binnenkomt?',
-    letOp: 'Termijnen: registratie binnen 2 werkdagen, besluit binnen 10 werkdagen. Plaatsing op rode lijst vraagt schriftelijke onderbouwing.',
-    stappen: [
-      {
-        id: 'coordinator-1',
-        titel: 'Preventie',
-        kern: 'Werk aan gelijke kansen aan de voorkant.',
-        detail: '<p>Informeer stagebedrijven over de Stagecode hbo. Zorg dat begeleiders de aanpak kennen.</p>',
-        actie: 'Stagecode hbo normen',
-        actieType: 'aanpak'
-      },
-      {
-        id: 'coordinator-2',
-        titel: 'Patronen herkennen',
-        kern: 'Registreer elk signaal binnen 2 werkdagen.',
-        detail: '<p>Eén incident is een casus. Drie incidenten zijn een patroon. Let op terugkerende bedrijven of afdelingen.</p>',
-        actie: 'Registratieprotocol',
-        actieType: 'registratie'
-      },
-      {
-        id: 'coordinator-3',
-        titel: 'Gespreksvoering',
-        kern: 'Voer het gesprek met de organisatie.',
-        detail: '<p>Met of namens de student. Jij bent bemiddelaar, geen aanklager. Houd de opleidingsmanager op de hoogte.</p>',
-        actie: 'Gesprek voorbereiden',
-        actieType: 'tips'
-      },
-      {
-        id: 'coordinator-4',
-        titel: 'Afspraken maken',
-        kern: 'Concrete afspraken, besluit binnen 10 werkdagen.',
-        detail: '<p>Zorg dat de student niet de dupe is. Geen verandering? Overweeg de samenwerking op te schorten.</p>',
-        actie: 'Handelingskader & besluit',
-        actieType: 'kader'
-      },
-      {
-        id: 'coordinator-5',
-        titel: 'Borgen',
-        kern: 'Koppel terug en houd het dossier bij.',
-        detail: '<p>Naar student, begeleider en bedrijf. Bij een patroon: rode lijst met schriftelijke onderbouwing.</p>',
-        actie: 'Beleid rode lijst',
-        actieType: 'rodelijst'
-      }
-    ],
-    blokken: [
-      { t: 'Registratie is bescherming', i: 'Wat niet wordt vastgelegd, wordt vergeten en herhaalt zich bij volgende studenten.' },
-      { t: 'Onafhankelijkheid', i: 'Langdurige relaties of sponsoring mogen nooit signalen van ongelijke behandeling vergoelijken.' },
-      { t: 'Escaleer op tijd', i: 'Bij herhaling of weigering van meewerken: schakel direct de opleidingsmanager in.', b: true }
-    ]
-  },
-  {
-    id: 'manager',
-    naam: 'Onderwijsmanager',
-    rol: 'Opleidingsmanager / Bestuur',
-    icoon: 'Building2',
-    vraag: 'Wat doe ik als stagediscriminatie escaleert of structureel wordt?',
-    letOp: 'Jij neemt positie in namens de opleiding. Verantwoordelijk voor de norm, het besluit en de borging in beleid.',
-    stappen: [
-      {
-        id: 'manager-1',
-        titel: 'De norm uitdragen',
-        kern: 'Maak professionalisering mogelijk.',
-        detail: '<p>Agendeer gelijke stagekansen in teamoverleg. Geef begeleiders tijd voor de aanpak.</p>',
-        actie: 'Naar de beleidsnormen',
-        actieType: 'aanpak'
-      },
-      {
-        id: 'manager-2',
-        titel: 'Zicht op patronen',
-        kern: 'Houd overzicht op alle meldingen.',
-        detail: '<p>Bespreek de registratie periodiek. Welke bedrijven komen terug? Anonieme meldingen tellen mee.</p>',
-        actie: 'Monitoring & trends',
-        actieType: 'monitoring'
-      },
-      {
-        id: 'manager-3',
-        titel: 'Gesprek bij escalatie',
-        kern: 'Voer het formele gesprek namens HR.',
-        detail: '<p>Benoem de norm, de signalen en de consequenties. Ondersteun je medewerkers.</p>',
-        actie: 'Formeel kader directie',
-        actieType: 'tips'
-      },
-      {
-        id: 'manager-4',
-        titel: 'Besluiten',
-        kern: 'Besluit over de samenwerking.',
-        detail: '<p>Opschorten of beëindigen, schriftelijk onderbouwd. Of doorverwijzen naar klachtencommissie of ELBHO.</p>',
-        actie: 'Klachtenprocedure & sancties',
-        actieType: 'klacht'
-      },
-      {
-        id: 'manager-5',
-        titel: 'Borgen in beleid',
-        kern: 'Evalueer en stel bij.',
-        detail: '<p>Wat leren casussen ons over onze processen? Koppel structurele signalen terug naar het stagebureau.</p>',
-        actie: 'HR-breed beleid borgen',
-        actieType: 'rodelijst'
-      }
-    ],
-    blokken: [
-      { t: 'Jij bent de rugdekking', i: 'Docenten en begeleiders moeten weten dat jij onvoorwaardelijk achter hen staat bij het stellen van grenzen.' },
-      { t: 'Norm boven relatie', i: 'Stageplaatsing of zakelijke banden wegen nooit zwaarder dan sociale en fysieke veiligheid van studenten.' },
-      { t: 'Van casus naar beleid', i: 'Zonder structurele registratie en evaluatie verandert er op opleidingsniveau niets.', b: true }
-    ]
-  },
-  {
-    id: 'vertrouwens',
-    naam: 'Vertrouwenspersoon',
-    rol: 'Centraal meldpunt / Onafhankelijk',
-    icoon: 'ShieldCheck',
-    vraag: 'Wat doe ik als meldpunt bij stagediscriminatie?',
-    letOp: 'Vertrouwelijk en onafhankelijk. Geen actie zonder instemming van de student, behalve bij acute onveiligheid.',
-    stappen: [
-      {
-        id: 'vertrouwens-1',
-        titel: 'Zichtbaar zijn',
-        kern: 'Studenten moeten je kunnen vinden.',
-        detail: '<p>Zorg dat het meldpunt vindbaar is op HINT en in de communicatie van de opleiding.</p>',
-        actie: 'Vindbaarheid & contact',
-        actieType: 'meldpunt'
-      },
-      {
-        id: 'vertrouwens-2',
-        titel: 'Meldingen ontvangen',
-        kern: 'Anoniem of op naam, via het systeem.',
-        detail: '<p>Elke melding komt binnen bij het meldpunt. Ook anonieme meldingen worden geregistreerd.</p>',
-        actie: 'Naar het meldsysteem',
-        actieType: 'meldpunt'
-      },
-      {
-        id: 'vertrouwens-3',
-        titel: 'Het gesprek',
-        kern: 'Luister en valideer. Geen bewijs nodig.',
-        detail: '<p>De student vertelt wat hij of zij kwijt wil. Erkenning gaat vóór waarheidsvinding.</p>',
-        actie: 'Gesprekstips vertrouwenspersoon',
-        actieType: 'tips'
-      },
-      {
-        id: 'vertrouwens-4',
-        titel: 'Toeleiden naar de opleiding',
-        kern: 'Het doel is een gesprek met de opleiding.',
-        detail: '<p>Bespreek de opties en moedig contact met de studentbegeleider aan. Je kunt meegaan als steun.</p>',
-        actie: 'Meldingsroute & begeleiding',
-        actieType: 'route'
-      },
-      {
-        id: 'vertrouwens-5',
-        titel: 'Nazorg en signalering',
-        kern: 'Check in en koppel patronen geanonimiseerd terug.',
-        detail: '<p>Na 2 à 3 weken opnieuw contact. Geef geanonimiseerde patronen door aan het stagebureau.</p>',
-        actie: 'Monitoring & beleid',
-        actieType: 'monitoring'
-      }
-    ],
-    blokken: [
-      { t: 'Onafhankelijk', i: 'Je staat buiten de opleiding, docentenkorps en beoordelingsrelaties van de student.' },
-      { t: 'Vertrouwelijk', i: 'Wat de student deelt blijft strikt vertrouwelijk, tenzij de student expliciet schriftelijk instemt met delen.' },
-      { t: 'Anonieme meldingen tellen', i: 'Ook als een student geen actie wil, helpt de registratie om structurele patronen zichtbaar te maken.', b: true }
     ]
   }
 ];
@@ -403,6 +238,10 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
     title: 'HINT-pagina Stagediscriminatie',
     subtitle: 'Officiële informatie- en meldpagina van Hogeschool Rotterdam',
     badge: 'HINT Portaal',
+    externalUrl: {
+      label: 'Naar de HINT-pagina',
+      url: 'https://hint.hr.nl/nl/HR/Studie/keuzes-in-je-studie/Stage/stagediscriminatie/'
+    },
     content: {
       inleiding: 'Op de officiële HINT-themapagina van Hogeschool Rotterdam vind je uitgebreide achtergrondinformatie over gelijke stagekansen, herkenning van discriminatie en veilige meldroutes.',
       punten: [
@@ -420,14 +259,16 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
         }
       ],
       tips: [
-        'Ga naar HINT via je browser: hint.hr.nl (zoekterm: Stagediscriminatie)',
-        'Meldpunt & Vertrouwenspersonen: vertrouwenspersonen@hr.nl',
+        'Ga naar HINT via je browser: https://hint.hr.nl/nl/HR/Studie/keuzes-in-je-studie/Stage/stagediscriminatie/',
+        'Meldpunt formulier: https://forms.cloud.microsoft/e/fD8hpCT6WL',
         'Erkenning gaat altijd vóór bewijslast. Jij bepaalt zelf welke stappen er volgen.'
       ],
       contactInfo: {
-        naam: 'Centraal Meldpunt & Vertrouwenspersonen HR',
-        contact: 'hint.hr.nl · vertrouwenspersonen@hr.nl',
-        toelichting: 'Veilig en vertrouwelijk bereikbaar voor alle studenten van Hogeschool Rotterdam.'
+        naam: 'HINT Themapagina Stagediscriminatie',
+        contact: 'https://hint.hr.nl/nl/HR/Studie/keuzes-in-je-studie/Stage/stagediscriminatie/',
+        toelichting: 'Officiële pagina van Hogeschool Rotterdam met handvatten, meldroutes en ondersteuning.',
+        linkUrl: 'https://hint.hr.nl/nl/HR/Studie/keuzes-in-je-studie/Stage/stagediscriminatie/',
+        linkLabel: 'Naar de HINT-pagina'
       }
     }
   },
@@ -441,7 +282,7 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
       url: 'https://www.vereniginghogescholen.nl/system/knowledge_base/attachments/files/000/001/615/original/Stagecode_hbo.pdf?1779095526'
     },
     content: {
-      inleiding: 'Iedere student heeft recht op een veilige, inclusieve en gelijkwaardige stageplek. Hogeschool Rotterdam conformeert zich aan de Stagecode hbo en het landelijke Manifest Gelijke Kansen in Stage en Beroep.',
+      inleiding: 'Iedere student heeft recht op een veilige, inclusieve en gelijkwaardige stageplek. Hogeschool Rotterdam conformeert zich aan de Stagecode hbo en het landelijke Manifest Gelijke Kansen.',
       punten: [
         {
           kop: '1. Objectieve werving en selectie',
@@ -467,33 +308,39 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
     id: 'meldpunt',
     title: 'Meldpunt',
     subtitle: 'Direct hulp, advies of een melding indienen',
+    badge: 'Centraal Meldpunt',
+    externalUrl: {
+      label: 'Open meldingsformulier',
+      url: 'https://forms.cloud.microsoft/e/fD8hpCT6WL'
+    },
     content: {
-      inleiding: 'Heb je stagediscriminatie ervaren, gezien of vermoed je het? Je kunt altijd veilig en vertrouwelijk terecht. Je bepaalt zelf welke stappen er wel of niet worden genomen.',
+      inleiding: 'Hogeschool Rotterdam heeft n.a.v. de stagecode een centraal en laagdrempelig meldpunt ingericht waar studenten discriminatie veilig, vertrouwelijk en desgewenst anoniem kunnen melden. Je bepaalt zelf welke stappen er wel of niet worden genomen.',
       punten: [
         {
-          kop: 'Optie 1: Begeleider',
+          kop: 'Optie 1: Centraal Meldpunt (Formulier - anoniem of op naam)',
+          tekst: 'Dien direct je melding in via het officiële online formulier van Hogeschool Rotterdam. Meldingen worden strikt vertrouwelijk behandeld en helpen patronen bij stagebedrijven in kaart te brengen en aan te pakken.'
+        },
+        {
+          kop: 'Optie 2: Begeleider',
           tekst: 'Je studentcoach, stagebegeleider of docent. Als je een snelle oplossing zoekt binnen je curriculum of samen een gesprek wilt voorbereiden.'
         },
         {
-          kop: 'Optie 2: Vertrouwenspersoon Ongewenste Omgangsvormen',
+          kop: 'Optie 3: Vertrouwenspersoon Ongewenste Omgangsvormen',
           tekst: 'Volledig onafhankelijk van je opleiding. Helpt je je gedachten op een rij te zetten en bespreekt in alle rust en vertrouwelijkheid mogelijke vervolgstappen.'
-        },
-        {
-          kop: 'Optie 3: Centraal Meldpunt (Anoniem of op naam)',
-          tekst: 'Dien een melding in via het interne HR-portaal (HINT). Anonieme meldingen worden gebruikt om structurele patronen bij stagebedrijven in kaart te brengen en aan te pakken.'
         }
       ],
       tips: [
+        'Direct meldingsformulier: https://forms.cloud.microsoft/e/fD8hpCT6WL',
         'Kies zelf je vertrouwenspersoon via de officiële website van Hogeschool Rotterdam.',
-        'Centraal Meldpunt via HINT: zoek op "Meldpunt Ongewenst Gedrag".',
+        'Centraal Meldpunt via HINT: https://hint.hr.nl/nl/HR/Studie/keuzes-in-je-studie/Stage/stagediscriminatie/',
         'Landelijk: Discriminatie.nl / College voor de Rechten van de Mens.'
       ],
       contactInfo: {
-        naam: 'Vertrouwenspersonen Hogeschool Rotterdam',
-        contact: 'https://hint.hr.nl/nl/HR/Over-de-HR/De-Organisatie/Contactpersonen/vertrouwenspersonen/',
-        toelichting: 'Onafhankelijk en vertrouwelijk. Bekijk het overzicht en kies zelf met wie je contact opneemt.',
-        linkUrl: 'https://hint.hr.nl/nl/HR/Over-de-HR/De-Organisatie/Contactpersonen/vertrouwenspersonen/',
-        linkLabel: 'Kies een vertrouwenspersoon'
+        naam: 'Centraal Meldpunt Stagediscriminatie',
+        contact: 'https://forms.cloud.microsoft/e/fD8hpCT6WL',
+        toelichting: 'Veilig, vertrouwelijk en laagdrempelig. Anoniem melden is altijd mogelijk.',
+        linkUrl: 'https://forms.cloud.microsoft/e/fD8hpCT6WL',
+        linkLabel: 'Naar het meldingsformulier'
       }
     }
   },

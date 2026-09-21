@@ -7,7 +7,6 @@ import { StepsGrid } from './components/StepsGrid';
 import { QuestionBanner } from './components/QuestionBanner';
 import { KeyPrinciples } from './components/KeyPrinciples';
 import { ActionModal } from './components/ActionModal';
-import { HandelingskaderOverview } from './components/HandelingskaderOverview';
 import { Footer } from './components/Footer';
 import { ACTOREN } from './data/routekaartData';
 
@@ -16,7 +15,6 @@ export default function App() {
   const [activeModalResource, setActiveModalResource] = useState<string | null>(null);
   const [modalCustomTitle, setModalCustomTitle] = useState<string | undefined>(undefined);
   const [liveMessage, setLiveMessage] = useState<string>('');
-  const [isHandelingskaderOpen, setIsHandelingskaderOpen] = useState(false);
 
   const currentActor = ACTOREN[actiefIndex];
 
@@ -52,7 +50,7 @@ export default function App() {
       </div>
 
       <div className="max-w-[1240px] mx-auto wrap-container">
-        {/* Semantic Header */}
+        {/* Semantic Header with Stagecode pill & Definition */}
         <Header
           onOpenMeldpunt={() => {
             setActiveModalResource('meldpunt');
@@ -62,69 +60,7 @@ export default function App() {
             setActiveModalResource('aanpak');
             setModalCustomTitle('Stagecode hbo');
           }}
-          isHandelingskaderOpen={isHandelingskaderOpen}
-          onToggleHandelingskader={() => {
-            setIsHandelingskaderOpen(prev => !prev);
-            setLiveMessage(isHandelingskaderOpen ? 'Handelingskader ingeklapt.' : 'Handelingskader uitgeklapt.');
-          }}
         />
-
-        {/* Uitklapbaar Handelingskader per rol (tussen Stagecode & Meldpunt in header geactiveerd) */}
-        <AnimatePresence>
-          {isHandelingskaderOpen && (
-            <motion.section
-              id="handelingskader-collapse"
-              aria-label="Uitklapvenster Handelingskader per rol"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.22 }}
-              className="overflow-hidden mb-6"
-            >
-              <div className="bg-white border-2 border-[#003340] rounded-2xl p-4 sm:p-6 shadow-md">
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D1C7BA]">
-                  <div className="flex items-center gap-2.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#00587A]" aria-hidden="true" />
-                    <h2 className="text-[16px] sm:text-[18px] font-bold text-[#003340] m-0">
-                      Handelingskader per rol
-                    </h2>
-                    <span className="text-[11px] text-[#4A5568] bg-[#FAF7F2] px-2 py-0.5 rounded border border-[#D1C7BA]">
-                      Uitgeklapt overzicht
-                    </span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setIsHandelingskaderOpen(false)}
-                    className="text-[12px] font-bold text-[#3D3833] hover:text-[#BA093F] px-2.5 py-1 rounded-lg border border-[#D1C7BA] hover:bg-[#FAF7F2] transition-colors cursor-pointer"
-                    aria-label="Sluit het handelingskader overzicht"
-                  >
-                    Inklappen ✕
-                  </button>
-                </div>
-
-                <HandelingskaderOverview
-                  actoren={ACTOREN}
-                  actiefIndex={actiefIndex}
-                  onSelectActor={handleRoleSelect}
-                  onOpenAction={handleOpenAction}
-                />
-              </div>
-            </motion.section>
-          )}
-        </AnimatePresence>
-
-        {/* Wat is stagediscriminatie */}
-        <section
-          aria-label="Wat is stagediscriminatie"
-          className="bg-white border-2 border-[#D1C7BA] rounded-xl px-4 py-3 sm:px-5 sm:py-3.5 mb-5 shadow-2xs"
-        >
-          <h2 className="text-[13px] sm:text-[14px] font-extrabold text-[#BA093F] uppercase tracking-wide m-0 mb-1">
-            WAT IS STAGEDISCRIMINATIE?
-          </h2>
-          <p className="text-[13.5px] sm:text-[14.5px] text-[#003340] leading-relaxed m-0">
-            Afwijzing, uitsluiting of ongelijke behandeling tijdens of het zoeken van de stage op basis van afkomst, kleur, gender, religie, seksuele oriëntatie of (on)zichtbare beperking.
-          </p>
-        </section>
 
         {/* Role Selector with WAI-ARIA Tabs & Arrow Key Navigation */}
         <ActorSelector
