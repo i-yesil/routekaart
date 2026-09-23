@@ -69,7 +69,7 @@ export const ACTOREN: Actor[] = [
     rol: 'Stagiair of zoekende',
     icoon: 'GraduationCap',
     vraag: 'Wat doe ik als ik stagediscriminatie ervaar of vermoed?',
-    letOp: 'Niet jouw schuld. Erkenning gaat altijd vóór bewijs. Je hoeft het niet alleen op te lossen.',
+    letOp: 'Erkenning gaat altijd vóór bewijs. Je hoeft het niet alleen op te lossen.',
     stappen: [
       {
         id: 'student-1',

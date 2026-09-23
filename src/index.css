@@ -9,30 +9,38 @@
   }
 }
 
-/* Print optimizations for single page or clean 2-page print */
+/* Print optimizations for landscape 1-page comparison sheet */
+@page {
+  size: A4 landscape;
+  margin: 4mm 6mm;
+}
+
 @media print {
-  body {
+  html, body {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background: #ffffff !important;
     color: #000000 !important;
-    padding: 0 !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-  .no-print {
+  
+  .no-print,
+  .screen-only {
     display: none !important;
   }
+
   .print-only {
     display: block !important;
-  }
-  .stappen-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-  }
-  .stap-card {
-    break-inside: avoid;
-    box-shadow: none !important;
-  }
-  .wrap-container {
+    width: 100% !important;
     max-width: 100% !important;
-    padding: 0 !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }
 

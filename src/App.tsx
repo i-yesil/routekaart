@@ -8,6 +8,7 @@ import { QuestionBanner } from './components/QuestionBanner';
 import { KeyPrinciples } from './components/KeyPrinciples';
 import { ActionModal } from './components/ActionModal';
 import { Footer } from './components/Footer';
+import { PrintView } from './components/PrintView';
 import { ACTOREN } from './data/routekaartData';
 
 export default function App() {
@@ -29,95 +30,101 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7EFE3] text-[#003340] py-6 sm:py-9 px-3.5 sm:px-6">
-      {/* WCAG 2.4.1 Skip-link voor toetsenbordgebruikers */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#003340] focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:ring-2 focus:ring-[#BA093F]"
-      >
-        Ga direct naar de hoofdinhoud
-      </a>
+    <div className="min-h-screen bg-[#F7EFE3] text-[#003340] py-6 sm:py-9 px-3.5 sm:px-6 print:p-0 print:m-0 print:bg-white">
+      {/* Dedicated 1-Page Landscape Print View */}
+      <PrintView />
 
-      {/* WCAG 4.1.3 Status Announcements voor Screen Readers */}
-      <div
-        id="status-announcer"
-        className="sr-only"
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        {liveMessage}
-      </div>
+      {/* Screen Interactive View */}
+      <div className="screen-only">
+        {/* WCAG 2.4.1 Skip-link voor toetsenbordgebruikers */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#003340] focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:ring-2 focus:ring-[#BA093F]"
+        >
+          Ga direct naar de hoofdinhoud
+        </a>
 
-      <div className="max-w-[1240px] mx-auto wrap-container">
-        {/* Semantic Header with Stagecode pill & Definition */}
-        <Header
-          onOpenMeldpunt={() => {
-            setActiveModalResource('meldpunt');
-            setModalCustomTitle('Meldpunt');
-          }}
-          onOpenStagecode={() => {
-            setActiveModalResource('aanpak');
-            setModalCustomTitle('Stagecode hbo');
+        {/* WCAG 4.1.3 Status Announcements voor Screen Readers */}
+        <div
+          id="status-announcer"
+          className="sr-only"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {liveMessage}
+        </div>
+
+        <div className="max-w-[1240px] mx-auto wrap-container">
+          {/* Semantic Header with Stagecode pill & Definition */}
+          <Header
+            onOpenMeldpunt={() => {
+              setActiveModalResource('meldpunt');
+              setModalCustomTitle('Meldpunt');
+            }}
+            onOpenStagecode={() => {
+              setActiveModalResource('aanpak');
+              setModalCustomTitle('Stagecode hbo');
+            }}
+          />
+
+          {/* Role Selector with WAI-ARIA Tabs & Arrow Key Navigation */}
+          <ActorSelector
+            actoren={ACTOREN}
+            actiefIndex={actiefIndex}
+            onSelect={handleRoleSelect}
+          />
+
+          {/* Semantic Main Landmark */}
+          <main id="main-content" tabIndex={-1} className="outline-none">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentActor.id}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.16 }}
+                id={`panel-${currentActor.id}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${currentActor.id}`}
+              >
+                {/* Guiding Question Banner */}
+                <QuestionBanner
+                  vraag={currentActor.vraag}
+                  rolNaam={currentActor.naam}
+                />
+
+                {/* 5-Step Roadmap with Verified Color Contrast */}
+                <StepsGrid
+                  stappen={currentActor.stappen}
+                  onOpenAction={handleOpenAction}
+                />
+
+                {/* Critical Warning / Let-op Callout */}
+                <WarningCallout letOpHtml={currentActor.letOp} />
+
+                {/* Key Principles & Contact Points */}
+                <section aria-label="Bij wie kun je terecht?" className="mt-2 mb-6">
+                  <KeyPrinciples blokken={currentActor.blokken} />
+                </section>
+              </motion.div>
+            </AnimatePresence>
+          </main>
+
+          {/* Semantic Footer with Hogeschool Rotterdam Logo & Themagroep */}
+          <Footer />
+        </div>
+
+        {/* Action Guidance & Tools Modal */}
+        <ActionModal
+          resourceId={activeModalResource}
+          customTitle={modalCustomTitle}
+          onClose={() => {
+            setActiveModalResource(null);
+            setModalCustomTitle(undefined);
           }}
         />
-
-        {/* Role Selector with WAI-ARIA Tabs & Arrow Key Navigation */}
-        <ActorSelector
-          actoren={ACTOREN}
-          actiefIndex={actiefIndex}
-          onSelect={handleRoleSelect}
-        />
-
-        {/* Semantic Main Landmark */}
-        <main id="main-content" tabIndex={-1} className="outline-none">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentActor.id}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.16 }}
-              id={`panel-${currentActor.id}`}
-              role="tabpanel"
-              aria-labelledby={`tab-${currentActor.id}`}
-            >
-              {/* Guiding Question Banner */}
-              <QuestionBanner
-                vraag={currentActor.vraag}
-                rolNaam={currentActor.naam}
-              />
-
-              {/* 5-Step Roadmap with Verified Color Contrast */}
-              <StepsGrid
-                stappen={currentActor.stappen}
-                onOpenAction={handleOpenAction}
-              />
-
-              {/* Critical Warning / Let-op Callout */}
-              <WarningCallout letOpHtml={currentActor.letOp} />
-
-              {/* Key Principles & Contact Points */}
-              <section aria-label="Bij wie kun je terecht?" className="mt-2 mb-6">
-                <KeyPrinciples blokken={currentActor.blokken} />
-              </section>
-            </motion.div>
-          </AnimatePresence>
-        </main>
-
-        {/* Semantic Footer with Hogeschool Rotterdam Logo & Themagroep */}
-        <Footer />
       </div>
-
-      {/* Action Guidance & Tools Modal */}
-      <ActionModal
-        resourceId={activeModalResource}
-        customTitle={modalCustomTitle}
-        onClose={() => {
-          setActiveModalResource(null);
-          setModalCustomTitle(undefined);
-        }}
-      />
     </div>
   );
 }
