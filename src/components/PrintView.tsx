@@ -5,12 +5,22 @@ import { BookOpen, Eye, MessageSquare, Users, Sprout, ShieldAlert, HeartHandshak
 
 const STEP_ICONS = [BookOpen, Eye, MessageSquare, Users, Sprout];
 
-export const PrintView: React.FC = () => {
+interface PrintViewProps {
+  forPreview?: boolean;
+}
+
+export const PrintView: React.FC<PrintViewProps> = ({ forPreview = false }) => {
   const studentActor = ACTOREN.find((a) => a.id === 'student') || ACTOREN[0];
   const begeleiderActor = ACTOREN.find((a) => a.id === 'begeleider') || ACTOREN[1];
 
   return (
-    <div className="print-only hidden font-sans bg-white text-[#003340] w-full max-h-[100vh] box-border p-1 leading-tight select-none">
+    <div
+      className={
+        forPreview
+          ? "w-full font-sans bg-white text-[#003340] box-border p-2 leading-tight"
+          : "print-only font-sans bg-white text-[#003340] w-full max-h-[100vh] box-border p-1 leading-tight select-none"
+      }
+    >
       {/* 1. Header (Compact, max ~16mm) */}
       <header className="flex items-center justify-between pb-1.5 mb-1.5 border-b-2 border-[#003340]">
         <div className="flex items-center gap-2.5">

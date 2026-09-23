@@ -9,12 +9,14 @@ import { KeyPrinciples } from './components/KeyPrinciples';
 import { ActionModal } from './components/ActionModal';
 import { Footer } from './components/Footer';
 import { PrintView } from './components/PrintView';
+import { PrintModal } from './components/PrintModal';
 import { ACTOREN } from './data/routekaartData';
 
 export default function App() {
   const [actiefIndex, setActiefIndex] = useState(0);
   const [activeModalResource, setActiveModalResource] = useState<string | null>(null);
   const [modalCustomTitle, setModalCustomTitle] = useState<string | undefined>(undefined);
+  const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
   const [liveMessage, setLiveMessage] = useState<string>('');
 
   const currentActor = ACTOREN[actiefIndex];
@@ -65,6 +67,9 @@ export default function App() {
             onOpenStagecode={() => {
               setActiveModalResource('aanpak');
               setModalCustomTitle('Stagecode hbo');
+            }}
+            onOpenPrint={() => {
+              setIsPrintModalOpen(true);
             }}
           />
 
@@ -123,6 +128,12 @@ export default function App() {
             setActiveModalResource(null);
             setModalCustomTitle(undefined);
           }}
+        />
+
+        {/* Dedicated Print & PDF Modal */}
+        <PrintModal
+          isOpen={isPrintModalOpen}
+          onClose={() => setIsPrintModalOpen(false)}
         />
       </div>
     </div>

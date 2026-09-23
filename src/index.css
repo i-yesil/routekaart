@@ -15,6 +15,12 @@
   margin: 4mm 6mm;
 }
 
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
 @media print {
   html, body {
     width: 100% !important;

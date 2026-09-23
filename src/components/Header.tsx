@@ -4,9 +4,10 @@ import { Printer, ShieldAlert, BookOpen, ExternalLink } from 'lucide-react';
 interface HeaderProps {
   onOpenMeldpunt?: () => void;
   onOpenStagecode?: () => void;
+  onOpenPrint?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = () => {
+export const Header: React.FC<HeaderProps> = ({ onOpenPrint }) => {
   const [isDefinitieOpen, setIsDefinitieOpen] = useState(false);
   const [isStagecodeOpen, setIsStagecodeOpen] = useState(false);
   const [isMeldpuntOpen, setIsMeldpuntOpen] = useState(false);
@@ -25,7 +26,14 @@ export const Header: React.FC<HeaderProps> = () => {
   }, []);
 
   const handlePrint = () => {
-    window.print();
+    try {
+      window.print();
+    } catch (e) {
+      console.warn('Direct print call prevented:', e);
+    }
+    if (onOpenPrint) {
+      onOpenPrint();
+    }
   };
 
   return (
