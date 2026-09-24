@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && rm -rf httpdocs_routekaart && cp -r dist httpdocs_routekaart",
+    "build": "vite build && rm -rf httpdocs_routekaart VOOR_DE_SERVER && cp -r dist httpdocs_routekaart && cp -r dist VOOR_DE_SERVER && mkdir -p public/server-bestanden && cp dist/index.html public/server-bestanden/index.html",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"

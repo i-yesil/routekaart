@@ -1,0 +1,6 @@
+Instructie voor het plaatsen op de O&O Server:
+==================================================
+
+1. Open de map op de server (bijv. \\postulate.hro.nl\httpdocs\aanpak_gelijkekansen\)
+2. Kopieer de 2 bestanden uit deze map (index.html en hr-logo.png) naar die servermap.
+3. Klaar! De routekaart werkt direct en geeft GEEN wit scherm.
