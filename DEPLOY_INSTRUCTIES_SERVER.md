@@ -37,12 +37,15 @@ Kijk in het scherm van **Google AI Studio** (meestal helemaal bovenaan of rechts
 ## 4. De bestanden op de O&O server zetten (volgens de instructie van je collega)
 
 In de uitgepakte map zie je een mapje genaamd:
-📁 **`httpdocs_routekaart`**
+📁 **`routekaart`**
 
 Binnen dit mapje vind je:
-- 📄 `index.html` (het startbestand)
-- 📁 `assets/` (de stijlen en interactieve onderdelen)
+- 📄 `index.html` (bevat ALLES in één enkel bestand: alle scripts, stijlen en opmaak!)
 - 🖼️ `hr-logo.png`
+
+> **Waarom is dit zo fijn?**  
+> Eerder stonden de scripts en stijlen in een apart mapje `assets/`. Als die map niet meegekopieerd werd of het webadres geen afsluitende schuine streep (`/`) had, bleef het scherm wit.  
+> Met deze **Single-File** versie zit alles veilig ingebouwd in **`index.html`**. Zodra je `index.html` uploadt, werkt de pagina direct en kan er niets meer ontbreken!
 
 ### Nu volg je de 4 stappen uit de PDF van je collega:
 1. **VPN aanzetten (als je thuiswerkt):**  
