@@ -217,24 +217,26 @@ export const ActionModal: React.FC<ActionModalProps> = ({
           )}
 
           {/* Key points */}
-          <div className="space-y-3">
-            <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#3D3833]">
-              Belangrijkste handvatten & afspraken
-            </h3>
-            {resource.content.punten.map((punt, idx) => (
-              <div
-                key={idx}
-                className="bg-white border-2 border-[#D1C7BA] rounded-xl p-4 shadow-2xs"
-              >
-                <h4 className="text-[14.5px] font-bold text-[#003340] mb-1">
-                  {punt.kop}
-                </h4>
-                <p className="text-[13px] text-[#1F2937] leading-relaxed">
-                  {punt.tekst}
-                </p>
-              </div>
-            ))}
-          </div>
+          {resource.content.punten && resource.content.punten.length > 0 && (
+            <div className="space-y-3">
+              <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#3D3833]">
+                Belangrijkste handvatten & afspraken
+              </h3>
+              {resource.content.punten.map((punt, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border-2 border-[#D1C7BA] rounded-xl p-4 shadow-2xs"
+                >
+                  <h4 className="text-[14.5px] font-bold text-[#003340] mb-1">
+                    {punt.kop}
+                  </h4>
+                  <p className="text-[13px] text-[#1F2937] leading-relaxed">
+                    {punt.tekst}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Practical tips */}
           {resource.content.tips && resource.content.tips.length > 0 && (
@@ -294,24 +296,26 @@ export const ActionModal: React.FC<ActionModalProps> = ({
 
         {/* Footer Actions */}
         <div className="p-4 sm:p-5 border-t border-[#D1C7BA] bg-white rounded-b-2xl flex items-center justify-between gap-3 sticky bottom-0">
-          <button
-            type="button"
-            onClick={handleCopySummary}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border-2 border-[#D1C7BA] text-[12.5px] font-bold text-[#003340] hover:bg-[#FAF7F2] transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-[#003340]"
-            aria-label="Kopieer samenvatting van richtlijnen naar klembord"
-          >
-            {copied ? (
-              <>
-                <Check className="w-4 h-4 text-emerald-700" aria-hidden="true" />
-                <span>Gekopieerd!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-4 h-4 text-[#3D3833]" aria-hidden="true" />
-                <span>Kopieer richtlijnen</span>
-              </>
-            )}
-          </button>
+          {resource.content.punten && resource.content.punten.length > 0 ? (
+            <button
+              type="button"
+              onClick={handleCopySummary}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border-2 border-[#D1C7BA] text-[12.5px] font-bold text-[#003340] hover:bg-[#FAF7F2] transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-[#003340]"
+              aria-label="Kopieer samenvatting van richtlijnen naar klembord"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4 text-emerald-700" aria-hidden="true" />
+                  <span>Gekopieerd!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-[#3D3833]" aria-hidden="true" />
+                  <span>Kopieer richtlijnen</span>
+                </>
+              )}
+            </button>
+          ) : <div />}
 
           <button
             type="button"

@@ -10,7 +10,6 @@ import { ActionModal } from './components/ActionModal';
 import { Footer } from './components/Footer';
 import { PrintView } from './components/PrintView';
 import { PrintModal } from './components/PrintModal';
-import { ServerDeployModal } from './components/ServerDeployModal';
 import { ACTOREN } from './data/routekaartData';
 
 export default function App() {
@@ -18,7 +17,6 @@ export default function App() {
   const [activeModalResource, setActiveModalResource] = useState<string | null>(null);
   const [modalCustomTitle, setModalCustomTitle] = useState<string | undefined>(undefined);
   const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
-  const [isServerModalOpen, setIsServerModalOpen] = useState(false);
   const [liveMessage, setLiveMessage] = useState<string>('');
 
   const currentActor = ACTOREN[actiefIndex];
@@ -119,7 +117,7 @@ export default function App() {
           </main>
 
           {/* Semantic Footer with Hogeschool Rotterdam Logo & Themagroep */}
-          <Footer onOpenServerModal={() => setIsServerModalOpen(true)} />
+          <Footer />
         </div>
 
         {/* Action Guidance & Tools Modal */}
@@ -136,12 +134,6 @@ export default function App() {
         <PrintModal
           isOpen={isPrintModalOpen}
           onClose={() => setIsPrintModalOpen(false)}
-        />
-
-        {/* Dedicated O&O Server Deploy Modal */}
-        <ServerDeployModal
-          isOpen={isServerModalOpen}
-          onClose={() => setIsServerModalOpen(false)}
         />
       </div>
     </div>

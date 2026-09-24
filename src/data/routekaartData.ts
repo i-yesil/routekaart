@@ -104,7 +104,8 @@ export const ACTOREN: Actor[] = [
           '<li class="flex items-baseline gap-2"><strong class="font-bold text-[#A87500] shrink-0">B.</strong><span>Zelf het gesprek voeren</span></li>' +
           '<li class="flex items-baseline gap-2"><strong class="font-bold text-[#A87500] shrink-0">C.</strong><span>Driehoeksgesprek met stagebedrijf</span></li>' +
           '<li class="flex items-baseline gap-2"><strong class="font-bold text-[#A87500] shrink-0">D.</strong><span>Officiële melding doen</span></li>' +
-          '</ul>'
+          '</ul>' +
+          '<p class="mt-2 text-[#003340] font-semibold">Bespreek je keuze.</p>'
       },
       {
         id: 'student-5',
@@ -143,7 +144,7 @@ export const ACTOREN: Actor[] = [
         titel: 'Bewustwording en preventie',
         kern: 'Gelijke stagekansen is een gezamenlijke verantwoordelijkheid.',
         detail: '<p>De HR-brede aanpak laat zien wat er van jou wordt verwacht aan kennis, handelen en houding.</p>',
-        actie: 'Naar de aanpak',
+        actie: 'Ga naar aanpak',
         actieType: 'aanpak'
       },
       {
@@ -151,7 +152,7 @@ export const ACTOREN: Actor[] = [
         titel: 'Signaleren',
         kern: 'Vraag actief door tijdens gesprekken en terugkomdagen.',
         detail: '<p>Let op signalen in de sollicitatiefase én tijdens de stage. Bij een signaal: plan binnen 5 werkdagen een gesprek. Bevestig dat je het serieus neemt.</p>',
-        actie: 'Naar de aanpak',
+        actie: 'Ga naar aanpak',
         actieType: 'aanpak'
       },
       {
@@ -159,20 +160,24 @@ export const ACTOREN: Actor[] = [
         titel: 'Gespreksvoering',
         kern: 'Er is geen bewijs nodig om het gesprek te voeren.',
         detail: '<p>Wat wil de student? Erover praten? Oefenen? Officiële melding?</p><p>De student houdt regie over de stappen.</p>',
-        actie: 'Naar de aanpak',
+        actie: 'Ga naar aanpak',
         actieType: 'aanpak'
       },
       {
         id: 'begeleider-4',
         titel: 'Begeleiding',
         kern: 'Wat wil de student?',
-        detail: '<ul class="space-y-1 text-[12px]"><li><b>A.</b> (Nog) niets doen</li><li><b>B.</b> Zelf het gesprek voeren</li><li><b>C.</b> Driehoeksgesprek met stagebedrijf</li><li><b>D.</b> Officiële melding doen</li></ul>'
+        detail: '<ul class="space-y-1 text-[12px]"><li><b>A.</b> (Nog) niets doen</li><li><b>B.</b> Zelf het gesprek voeren</li><li><b>C.</b> Driehoeksgesprek met stagebedrijf</li><li><b>D.</b> Officiële melding doen</li></ul>',
+        actie: 'Ga naar aanpak',
+        actieType: 'aanpak'
       },
       {
         id: 'begeleider-5',
         titel: '(Na)zorg',
         kern: 'Hoe gaat het nu?',
-        detail: '<p>Hoe gaat het nu? Heeft de student er aanhoudend last van en beïnvloedt het de studie? Verwijs door naar het <a href="https://www.hogeschoolrotterdam.nl/voorlichting/begeleiding-en-voorzieningen/studentendecanen/" target="_blank" rel="noopener noreferrer">decanaat</a>.</p>'
+        detail: '<p>Hoe gaat het nu? Heeft de student er aanhoudend last van en beïnvloedt het de studie? Verwijs door naar het <a href="https://www.hogeschoolrotterdam.nl/voorlichting/begeleiding-en-voorzieningen/studentendecanen/" target="_blank" rel="noopener noreferrer">decanaat</a>.</p>',
+        actie: 'Ga naar aanpak',
+        actieType: 'aanpak'
       }
     ],
     blokken: [
@@ -274,34 +279,12 @@ export const RESOURCE_DETAILS: Record<string, ResourceInfo> = {
   },
   aanpak: {
     id: 'aanpak',
-    title: 'Stagecode hbo',
-    subtitle: 'Kaders, afspraken en de norm van Hogeschool Rotterdam & Vereniging Hogescholen',
-    badge: 'Norm & Kader',
-    externalUrl: {
-      label: 'Bekijk officiële Stagecode hbo (PDF)',
-      url: 'https://www.vereniginghogescholen.nl/system/knowledge_base/attachments/files/000/001/615/original/Stagecode_hbo.pdf?1779095526'
-    },
+    title: 'Aanpak',
+    subtitle: '',
+    badge: 'Aanpak',
     content: {
-      inleiding: 'Iedere student heeft recht op een veilige, inclusieve en gelijkwaardige stageplek. Hogeschool Rotterdam conformeert zich aan de Stagecode hbo en het landelijke Manifest Gelijke Kansen.',
-      punten: [
-        {
-          kop: '1. Objectieve werving en selectie',
-          tekst: 'Stagebedrijven selecteren uitsluitend op basis van stage-eisen en competenties, zonder vooroordelen over achternaam, achtergrond, geslacht, hoofddoek of functiebeperking.'
-        },
-        {
-          kop: '2. Veilig leerklimaat',
-          tekst: 'Er heerst een nultolerantie voor discriminatie, uitsluiting, seksuele intimidatie of kleinerende opmerkingen op de werkvloer.'
-        },
-        {
-          kop: '3. Zorgplicht van de onderwijsinstelling',
-          tekst: 'Hogeschool Rotterdam heeft de plicht studenten te ondersteunen en in te grijpen zodra gelijke kansen of de veiligheid in gevaar komen.'
-        }
-      ],
-      tips: [
-        'Bespreking van de Stagecode hbo is een vast onderdeel van het stagecontract.',
-        'Studenten lopen geen studievertraging op als een stage moet worden beëindigd door discriminatie.',
-        'De opleiding biedt actieve bemiddeling naar een vervangende stageplek.'
-      ]
+      inleiding: 'Deze pagina is momenteel leeg. Het bijbehorende document wordt later toegevoegd.',
+      punten: []
     }
   },
   meldpunt: {

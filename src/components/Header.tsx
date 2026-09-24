@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPrint }) => {
                 Afwijzing, uitsluiting of ongelijke behandeling tijdens of het zoeken van de stage op basis van afkomst, kleur, gender, religie, seksuele oriëntatie of (on)zichtbare beperking.
               </p>
               <p className="mt-2.5 pt-2.5 border-t border-[#EDE6DA] text-[12px] text-[#5A554E] leading-relaxed">
-                De Stagecode hbo stelt heldere normen en waarborgen om elke student een veilige, eerlijke en inclusieve stageperiode te garanderen.
+                De Stagecode hbo stelt heldere normen en beschermingsmaatregelen vast om voor elke student een veilige, eerlijke en inclusieve stageperiode te waarborgen.
               </p>
             </div>
 
